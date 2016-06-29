@@ -13,6 +13,8 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *email;
 
+@property (nonatomic) int indexNumber;
+
 - (instancetype)initWithName:(NSString *)name email:(NSString *)email;
 
 @end

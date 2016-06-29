@@ -17,5 +17,7 @@
 
 - (void)listOfContacts;
 
+// param type (Contact *)-> (NSString *)
+- (void)displayContactIndex: (NSString *)contact;
 
 @end

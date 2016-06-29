@@ -15,9 +15,10 @@
     self = [super init];
     if (self) {
         
-        // self.name = _name; == empty = empty
+        // self.name = _name; == (empty <=assign empty)
         self.name = name;
         self.email = email;
+        
     }
     return self;
 }

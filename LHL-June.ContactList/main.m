@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
         
         while (YES) {
         
-            NSString *userInput = [[InputCollector alloc] inputForPrompt:@"The menu: What would you like to do next? new - Create a new contact, list - List all contacts, quit - Exit Application > _"];
+            NSString *userInput = [[InputCollector alloc] inputForPrompt:@"The menu: What would you like to do next? new - Create a new contact, list - List all contacts, show - Display user detail, quit - Exit Application > _"];
         
             if ([userInput containsString:@"quit"]) {
                 // quit app
@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
             }
             
             else if ([userInput containsString:@"list"]) {
-                NSLog(@"LIST");
+                NSLog(@"*** LIST ***");
                 [newContactList listOfContacts];
             }
             
@@ -45,7 +45,11 @@ int main(int argc, const char * argv[]) {
                 Contact *newContact = [[Contact alloc] initWithName:fullName email:email];
                 [newContactList addContact:newContact];
             }
-
+            else if ([userInput containsString:@"show"]) {
+                // If a contact with that index/ID is found, display their details
+                NSString *indexUserPick = [[InputCollector alloc] inputForPrompt:@"Enter index number: "];
+                [newContactList displayContactIndex:indexUserPick];
+            }
         }
         
 
